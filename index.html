@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<!-- 
+      Bravo  Voici le Flag 1 :
+      CNM{CommentHTML_1s-EVIL!}
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Héphaïstos | NanoEv0L – La révolution de la longévité</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: #1a1a2e;
+            background: #f8f9fa;
+        }
+        header {
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: white;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+        .logo span {
+            color: #00d4ff;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 2rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #00d4ff;
+        }
+        .hero {
+            background: linear-gradient(rgba(15,12,41,0.85), rgba(36,36,62,0.9)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23000" width="1200" height="600"/><circle cx="200" cy="150" r="80" fill="%2300d4ff" opacity="0.1"/><circle cx="900" cy="400" r="120" fill="%2300d4ff" opacity="0.08"/></svg>');
+            background-size: cover;
+            color: white;
+            text-align: center;
+            padding: 6rem 2rem;
+        }
+        .hero h1 {
+            font-size: 3.2rem;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+        .hero .tagline {
+            font-size: 1.4rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+        }
+        .cta-button {
+            display: inline-block;
+            background: #00d4ff;
+            color: #0f0c29;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px rgba(0,212,255,0.4);
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,212,255,0.5);
+        }
+        .section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            color: #0f0c29;
+            position: relative;
+        }
+        h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: #00d4ff;
+            margin-top: 0.5rem;
+        }
+        .founder {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            margin-top: 2rem;
+        }
+        /* ===== PHOTO RONDE CORRIGÉE ===== */
+        .founder-photo {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            overflow: hidden;              
+            flex-shrink: 0;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        .founder-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;             
+            display: block;
+        }
+        /* ================================ */
+        .quote {
+            font-style: italic;
+            font-size: 1.15rem;
+            color: #444;
+            border-left: 4px solid #00d4ff;
+            padding-left: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .molecule {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+        .molecule-name {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, #00d4ff, #302b63);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+        .benefit-card {
+            background: #f0f7ff;
+            padding: 1.8rem;
+            border-radius: 12px;
+            border: 1px solid #d0e8ff;
+        }
+        .benefit-card h3 {
+            color: #302b63;
+            margin-bottom: 0.8rem;
+        }
+        .donation {
+            background: linear-gradient(135deg, #0f0c29, #302b63);
+            color: white;
+            border-radius: 16px;
+            padding: 3rem;
+            text-align: center;
+        }
+        .donation h2 {
+            color: white;
+        }
+        .donation h2::after {
+            background: #00d4ff;
+            margin: 0.5rem auto 0;
+        }
+        .contact-form {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.4rem;
+            font-weight: 600;
+            color: #333;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 0.9rem 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #00d4ff;
+        }
+        .submit-btn {
+            background: #00d4ff;
+            color: #0f0c29;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            width: 100%;
+            transition: transform 0.2s;
+        }
+        .submit-btn:hover {
+            transform: translateY(-2px);
+        }
+        footer {
+            background: #0f0c29;
+            color: #aaa;
+            text-align: center;
+            padding: 2.5rem 2rem;
+            font-size: 0.95rem;
+            margin-top: 4rem;
+        }
+        footer .disclaimer {
+            max-width: 800px;
+            margin: 1.5rem auto 0;
+            font-style: italic;
+            border-top: 1px solid #333;
+            padding-top: 1.5rem;
+            color: #888;
+        }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .founder { flex-direction: column; text-align: center; }
+            .founder-photo { margin: 0 auto; }
+            header { flex-direction: column; gap: 1rem; }
+            nav a { margin: 0 0.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">HÉPHAÏSTOS <span>|</span> NanoEv0L</div>
+    <nav>
+        <a href="#molecule">La molécule</a>
+        <a href="#fondatrice">Fondatrice</a>
+        <a href="#soutenir">Soutenir</a>
+        <a href="#reserver">Réserver</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>La science qui réécrit le destin humain</h1>
+    <p class="tagline">
+        NanoEv0L : la molécule révolutionnaire sur le point d’aboutir.  
+        Guérir les maladies. Rajeunir les cellules. Redéfinir la longévité.
+    </p>
+    <a href="#reserver" class="cta-button">Réserver dès maintenant</a>
+</section>
+
+<section class="section" id="fondatrice">
+    <h2>Notre visionnaire</h2>
+    <div class="founder">
+        
+        <div class="founder-photo">
+            <img src="Hephaistos_E-Holmes.png" alt="Elizabeth Holmes">
+        </div>
+        <div>
+            <h3 style="font-size: 1.6rem; margin-bottom: 0.5rem;">Elizabeth Holmes</h3>
+            <p style="color: #666; margin-bottom: 1rem;">Fondatrice & PDG d’Héphaïstos</p>
+            <p>
+                Après des années de recherches intensives et de découvertes révolutionnaires, 
+                Elizabeth Holmes se prépare à offrir au monde la plus grande avancée médicale 
+                de notre époque. NanoEv0L n’est pas une simple molécule : c’est la promesse 
+                d’un avenir où la maladie et le vieillissement ne seront plus une fatalité.
+            </p>
+            <blockquote class="quote">
+                « Nous ne soignons plus. Nous réinventons. NanoEv0L changera définitivement 
+                la relation de l’humanité avec le temps et la maladie. »
+            </blockquote>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="molecule">
+    <div class="molecule">
+        <div class="molecule-name">NanoEv0L</div>
+        <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto 1rem;">
+            Une avancée nanotechnologique d’une précision inégalée.  
+            Conçue pour pénétrer au cœur même des cellules et restaurer leur jeunesse biologique.
+        </p>
+        <p style="color: #555; max-width: 650px; margin: 0 auto;">
+            Les essais préliminaires sont extrêmement prometteurs.  
+            NanoEv0L ouvre la voie à un traitement universel capable d’agir sur un spectre 
+            extrêmement large de pathologies tout en stimulant les mécanismes naturels 
+            de régénération cellulaire.
+        </p>
+
+        <div class="benefits">
+            <div class="benefit-card">
+                <h3>Régénération cellulaire</h3>
+                <p>Restauration des fonctions mitochondriales et rajeunissement des tissus à l’échelle nanométrique.</p>
+            </div>
+            <div class="benefit-card">
+                <h3>Approche multi-pathologies</h3>
+                <p>Un potentiel thérapeutique large visant un éventail considérable de maladies chroniques et dégénératives.</p>
+            </div>
+            <div class="benefit-card">
+                <h3>Longévité optimisée</h3>
+                <p>Action sur les marqueurs du vieillissement pour prolonger la santé et la vitalité.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="soutenir">
+    <div class="donation">
+        <h2>Soutenez la révolution</h2>
+        <p style="font-size: 1.15rem; max-width: 700px; margin: 1.5rem auto 2rem; opacity: 0.95;">
+            Les grandes entreprises visionnaires ont aujourd’hui l’opportunité historique 
+            d’accompagner Héphaïstos dans la phase finale de développement de NanoEv0L.  
+            Votre soutien accélérera l’accès de l’humanité à cette avancée majeure.
+        </p>
+        <p style="margin-bottom: 2rem;">
+            Contactez notre département partenariats stratégiques pour discuter 
+            d’un engagement philanthropique ou d’un investissement d’impact.
+        </p>
+        <a href="mailto:partenariats@hephaistos-nanoevol.example" class="cta-button">
+            Contacter le département partenariats
+        </a>
+    </div>
+</section>
+
+<section class="section" id="reserver">
+    <h2 style="text-align: center;">Réservez votre place</h2>
+    <p style="text-align: center; max-width: 600px; margin: 0 auto 2.5rem; color: #555;">
+        Les premières productions de NanoEv0L seront limitées.  
+        Inscrivez-vous dès maintenant pour figurer parmi les futurs patients prioritaires.
+    </p>
+
+    <div class="contact-form">
+        <form onsubmit="event.preventDefault(); alert('Merci pour votre intérêt. Votre demande a été enregistrée (simulation).');">
+            <div class="form-group">
+                <label for="nom">Nom complet</label>
+                <input type="text" id="nom" required placeholder="Votre nom">
+            </div>
+            <div class="form-group">
+                <label for="email">Adresse e-mail</label>
+                <input type="email" id="email" required placeholder="vous@exemple.com">
+            </div>
+            <div class="form-group">
+                <label for="telephone">Téléphone</label>
+                <input type="tel" id="telephone" placeholder="+33 6 12 34 56 78">
+            </div>
+            <div class="form-group">
+                <label for="interet">Votre intérêt principal</label>
+                <select id="interet">
+                    <option value="rajeunissement">Rajeunissement cellulaire</option>
+                    <option value="maladie">Traitement d’une pathologie</option>
+                    <option value="prevention">Prévention & longévité</option>
+                    <option value="autre">Autre</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="message">Message (optionnel)</label>
+                <textarea id="message" rows="4" placeholder="Précisez vos attentes..."></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Réserver ma place prioritaire</button>
+        </form>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Héphaïstos – Tous droits réservés</p>
+    <p style="margin-top: 0.5rem;">Laboratoires Héphaïstos • Innovation • Longévité</p>
+    <p style="margin-top: 0.5rem;">Ce site est fictif et fait partie d’un exercice Capture The Flag (CTF).</p>
+    <p class="disclaimer">
+        Toute ressemblance avec des personnages existants ou ayant existé serait purement fortuite.
+    </p>
+</footer>
+
+</body>
+</html>
